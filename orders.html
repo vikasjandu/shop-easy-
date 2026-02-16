@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-container">
+    <h1 class="section-title">📦 Order History</h1>
+    <div id="orders-container"></div>
+</div>
+
+<script>
+const orders = JSON.parse(localStorage.getItem("order_history")) || [];
+const container = document.getElementById("orders-container");
+
+if (orders.length === 0) {
+    container.innerHTML = "<p>No orders yet.</p>";
+} else {
+    orders.forEach(order => {
+        container.innerHTML += `
+            <div style="margin-bottom:20px;">
+                <h3>Order Date: ${order.date}</h3>
+                <ul>
+                    ${order.items.map(i => `<li>${i.name} × ${i.quantity}</li>`).join("")}
+                </ul>
+            </div>
+        `;
+    });
+}
+</script>
+
+</body>
+</html>

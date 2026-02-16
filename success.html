@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Success - ShopEasy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.success-box{
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.success-icon{
+    font-size: 60px;
+    color: green;
+}
+
+h2{
+    margin: 15px 0;
+}
+
+.details{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.details p{
+    margin: 8px 0;
+}
+
+.btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9900;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="success-box">
+
+    <div class="success-icon">✅</div>
+    <h2>Order Placed Successfully!</h2>
+
+    <div class="details">
+        <p><strong>Order ID:</strong> <span id="orderID"></span></p>
+        <p><strong>Total Paid:</strong> <span id="total"></span></p>
+        <p><strong>Date:</strong> <span id="date"></span></p>
+    </div>
+
+    <button class="btn" onclick="goHome()">Back to Home</button>
+
+</div>
+
+<script>
+
+const order = JSON.parse(localStorage.getItem("latestOrder"));
+
+if(order){
+    document.getElementById("orderID").innerText = order.orderID;
+    document.getElementById("total").innerText = order.total;
+    document.getElementById("date").innerText = order.date;
+}
+
+function goHome(){
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>

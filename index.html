@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===============================================
+         SIMPLE E-COMMERCE WEBSITE - HOME PAGE
+         Created for BCA Project - Beginner Friendly
+         
+         This is the main page that displays products
+         =============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopEasy - A simple e-commerce website for BCA project">
+    <title>ShopEasy - Home</title>
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon using emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+        <div class="nav-left">
+            <a href="index.html" class="navbar-brand">
+                🛒 ShopEasy
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <input 
+                type="text" 
+                placeholder="Search products..." 
+                class="nav-search" 
+                id="search-input"
+                onkeyup="filterProducts()">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="orders.html" class="nav-link">Orders</a>
+
+            <a href="cart.html" class="cart-btn">
+                🛍️
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= HERO SECTION ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Upgrade Your Lifestyle</h1>
+        <p>Discover premium products at unbeatable prices.</p>
+        <a href="#products" class="hero-btn">Shop Now</a>
+    </div>
+</section>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-container">
+
+        <h1 class="section-title">Featured Products</h1>
+
+        <section class="products-section" id="products">
+            <div class="products-grid" id="products-grid"></div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+   <!-- ================= ADVANCED FOOTER ================= -->
+
+<footer class="footer">
+
+    <!-- Top Section -->
+    <div class="footer-top">
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>🛒 ShopEasy</h3>
+            <p>Your trusted online shopping store built as a BCA Final Year Project.</p>
+            <p>We provide quality products at affordable prices.</p>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Help Center</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-column">
+            <h3>Subscribe Newsletter</h3>
+            <p>Get updates about new products & offers.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Middle Section - Payment Icons -->
+    <div class="footer-middle">
+        <h4>We Accept</h4>
+        <div class="payment-icons">
+            <img src="https://img.icons8.com/color/48/visa.png"/>
+            <img src="https://img.icons8.com/color/48/mastercard.png"/>
+            <img src="https://img.icons8.com/color/48/paytm.png"/>
+            <img src="https://img.icons8.com/color/48/google-pay-india.png"/>
+            <img src="https://img.icons8.com/color/48/upi.png"/>
+        </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="footer-bottom">
+        <p>© 2026 ShopEasy E-Commerce Website | All Rights Reserved</p>
+        <p>Designed & Developed by Vikas | BCA Project</p>
+    </div>
+
+</footer>
+
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProducts();
+            updateCartCount();
+        });
+    </script>
+
+
+</body>
+</html>

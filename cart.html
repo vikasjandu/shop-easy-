@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===============================================
+         SIMPLE E-COMMERCE WEBSITE - CART PAGE
+         Created for BCA Project - Beginner Friendly
+         
+         This page displays items added to the cart
+         =============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopEasy - Your Shopping Cart">
+    <title>ShopEasy - Cart</title>
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon using emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+    <!-- ===============================================
+         NAVIGATION BAR
+         - Same as home page but with back button
+         =============================================== -->
+    <nav class="navbar">
+        <!-- Website Logo/Brand -->
+        <a href="index.html" class="navbar-brand">
+            <span class="brand-icon">🛒</span>
+            <span>ShopEasy</span>
+        </a>
+        
+        <!-- Navigation Links -->
+        <div class="navbar-nav">
+            <!-- Back to Shop Button -->
+            <a href="index.html" class="back-btn">
+                ← Back to Shop
+            </a>
+        </div>
+    </nav>
+
+    <!-- ===============================================
+         MAIN CONTENT AREA
+         - Contains cart items and summary
+         =============================================== -->
+    <main class="main-container">
+        <div class="cart-container">
+            <!-- Cart Header -->
+            <div class="cart-header">
+                <h1 class="cart-title">🛒 Your Cart</h1>
+            </div>
+            
+            <!-- ===============================================
+                 CART ITEMS CONTAINER
+                 - Items will be dynamically generated
+                 =============================================== -->
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will be inserted here by JavaScript -->
+            </div>
+            
+            <!-- ===============================================
+                 EMPTY CART MESSAGE
+                 - Shown when cart is empty
+                 =============================================== -->
+            <div id="empty-cart" class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added anything to your cart yet.</p>
+                <a href="index.html" class="checkout-btn" style="display: inline-block; text-decoration: none; max-width: 250px; margin: 0 auto;">
+                    ← Continue Shopping
+                </a>
+            </div>
+            
+            <!-- ===============================================
+                 CART SUMMARY
+                 - Shows total and action buttons
+                 =============================================== -->
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <!-- Extra Charges Section -->
+<div class="extra-charges">
+    <div class="charge-row">
+        <span>Subtotal</span>
+        <span id="subtotal-amount">₹0</span>
+    </div>
+    <div class="charge-row">
+        <span>GST (18%)</span>
+        <span id="gst-amount">₹0</span>
+    </div>
+    <div class="charge-row">
+        <span>Delivery Charges</span>
+        <span id="delivery-amount">₹50</span>
+    </div>
+</div>
+
+
+
+<div class="coupon-section">
+    <input type="text" id="coupon-input" placeholder="Enter Coupon Code">
+    <button onclick="applyCoupon()">Apply</button>
+    <p id="coupon-message" style="color: green; margin-top: 5px;"></p>
+</div>
+
+
+                <!-- Total Price -->
+                <div class="cart-total">
+                    <span class="total-label">Total (<span id="total-items">0</span> items):</span>
+                    <span class="total-amount" id="total-amount">₹0</span>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="cart-actions">
+                    <button class="clear-cart-btn" onclick="clearCart()">
+                        🗑️ Clear Cart
+                    </button>
+                    <button class="checkout-btn" onclick="checkout()">
+    ✓ Proceed to Checkout
+</button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===============================================
+         FOOTER
+         =============================================== -->
+    <footer>
+        <p>🛒 ShopEasy E-Commerce - BCA Project</p>
+        <p>Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+    
+    <!-- Initialize the cart page -->
+    <script>
+        // Load cart items when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCartItems();
+        });
+    </script>
+</body>
+</html>
